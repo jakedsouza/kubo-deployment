@@ -6,7 +6,7 @@ IaaS load balancers. Currently, only the GCP platform is supported.
 ## Prerequisites
 
 Before deploying and configuring Kubo, you need to carry out the following steps to 
-setup the Load balancers:
+setup the Load balancer:
    
 1. This guide expects to be run in the same bash session as the [BOSH install](../../platforms/gcp/install-bosh.md).
    If, for some reason, that is not the case, please set the `kubo_env_name` variable to the name
@@ -42,7 +42,6 @@ setup the Load balancers:
    
    ```bash
    export master_target_pool=$(terraform output -state=${kubo_terraform_state} kubo_master_target_pool) # master_target_pool                                                                             
-   export worker_target_pool=$(terraform output -state=${kubo_terraform_state} kubo_worker_target_pool) # worker_target_pool
    export kubernetes_master_host=$(terraform output -state=${kubo_terraform_state} master_lb_ip_address) # kubernetes_master_host
    ```
 
